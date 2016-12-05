@@ -18,9 +18,15 @@ $(function(){
 		var trHTML = '';
 		$('tr[data-type="dynamic"]').remove();
 		$.each(funcionarios, function(i) {
-		    trHTML += '<tr data-type="dynamic"><td class="nome">' + 
-		    			funcionarios[i].nome + 
-		    			'</td><td class="remove">X</td></tr>';
+		    trHTML += '<tr data-type="dynamic">' +
+		    			'<td class="nome">' + 
+		    				funcionarios[i].nome + 
+		    			'</td>' + 
+		    			'<td class="multa">' +
+		    				funcionarios[i].multa +
+		    			'</td>' +
+		    			'<td class="remove">X</td>' + 
+		    			'</tr>';
 		});
 
 		$('.tabelaUsuario').append(trHTML);
@@ -53,6 +59,6 @@ $(function(){
 
 	popularTabela();
 	trocarPeriodo(new Date().getHours());
-	$('span.txtNomePessoa').text(quemFazCafe());
+	$('span.txtNomePessoa').text(ControleCafe.quemFazCafeHoje());
 
 });
