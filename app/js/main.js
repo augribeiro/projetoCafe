@@ -1,10 +1,10 @@
 $(function(){
 	var funcionarios = window.IO.ler();
-	var quemFazCafe = function(){
-		for(var i = 0; i < funcionarios.length; i++){
-			if(funcionarios[i].jafoi === false)	return funcionarios[i].nome;
-		}
-	};
+	// var quemFazCafe = function(){
+	// 	for(var i = 0; i < funcionarios.length; i++){
+	// 		if(funcionarios[i].jafoi === false)	return funcionarios[i].nome;
+	// 	}
+	// };
 	var trocarPeriodo = function(hora){
 		if(hora >= 12){
 			$('span[name="txtHoraDia"]').text('esta tarde');
@@ -14,10 +14,13 @@ $(function(){
 	};
 
 	var popularTabela =  function(e){
+		var funcionarios = ControleCafe.getFuncionarios();
 		var trHTML = '';
 		$('tr[data-type="dynamic"]').remove();
 		$.each(funcionarios, function(i) {
-		    trHTML += '<tr data-type="dynamic"><td class="nome">' + funcionarios[i].nome + '</td><td class="remove">X</td></tr>';
+		    trHTML += '<tr data-type="dynamic"><td class="nome">' + 
+		    			funcionarios[i].nome + 
+		    			'</td><td class="remove">X</td></tr>';
 		});
 
 		$('.tabelaUsuario').append(trHTML);
@@ -28,8 +31,8 @@ $(function(){
 		var nomeFunc = $('input[name=nomeFunc]').text();
 		if(nomeFunc !== ""){
 			funcionarios.push({nome: nomeFunc, jafoi: false});
-			window.IO.salvar(funcionarios);
-			funcionarios = window.IO.ler();
+			ControleCafe.salvar(funcionarios);
+			funcionarios = ControleCafe.getFuncionarios();
 		}
 			popularTabela();
 	});
