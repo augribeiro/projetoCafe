@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Quem vai fazer o café hoje?</title>
+		<link rel="stylesheet" type="text/css" href="app/css/main.css"/>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="app/js/leitor.js"></script>
+		<script src="app/js/main.js"></script>
+		<script src="node_modules/angular/angular.js"></script>
+		<script src="app/js/controleCafe.js"></script>
+	</head>
+	<body>
+		<div class="divCentro">
+			<h1>Cadastro</h1>
+			<div>
+				<form class="formCadastro">
+					Nome
+					<br>
+				 	<input type="text" name="nomeFunc" value="" autocomplete="off">
+				 	<br>
+					<input type="submit" value="Cadastrar" />
+				</form>
+			</div>
+	  		<div class="divisao">
+	  			<strong class="txtNomePessoa" style="font-size: 16px; display: inline;"></strong> fez o café hoje?
+	  			<br>
+	  				<button type="button" class="fezCafe">Sim</button>
+	  				<button type="button" class="fezCafe">Não precisa fazer</button>
+	  				<button type="button" class="fezCafe">Não fez</button>
+	  		</div>
+	  		<div class="divisao">
+	  			<strong>Funcionários:</strong>
+	  			<br>
+				<table border="1px" solid black width="50%" align="center" class="tabelaUsuario">
+		  				<tr>
+		    				<th>Nomes</th>
+		    				<th>Multas</th>
+		    				<th>Remover</th>
+		    			</tr>
+		  		</table>
+	  		</div>
+			<img src="app/coffee.gif" style="padding-left: 40px;">
+		</div>
+	</body>
+</html>

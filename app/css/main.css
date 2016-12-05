@@ -1,0 +1,51 @@
+html{
+	font-family: arial, sans-serif;
+}
+
+body{
+	background-color: #755252;
+}
+
+h1{
+	padding-top: 30px;
+}
+
+.divCentro{
+	margin: 0 auto;
+	max-width: 800px;
+	min-width: 800px;
+	min-height: 600px;
+	background-color: #FFFFFF;
+	text-align: center;
+	border-radius: 1%;
+	align-content: center;
+}
+
+.txtNomePessoa{
+	font-size: 40px;
+	display: block;
+}
+
+.formCadastro{
+	padding-top: 30px;
+}
+
+.remove{
+	cursor: pointer;
+	color: red;
+}
+
+.divisao{
+	padding: 10px 0px;
+}
+
+input{
+	margin: 3px;
+}
+
+.multa {
+	border: 1px solid black;
+	padding: 0px 3px;
+	align-content: right; 
+	cursor: pointer;
+}
