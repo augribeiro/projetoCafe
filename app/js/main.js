@@ -50,7 +50,7 @@ $(function(){
 		for(var i = 0; i < funcionarios.length; i++){
 			if(filho === funcionarios[i].nome){
 				funcionarios.splice(i, 1);
-				window.IO.salvar(funcionarios);
+				ControleCafe.salvar(funcionarios);
 				return;
 			}
 		}
@@ -59,6 +59,6 @@ $(function(){
 
 	popularTabela();
 	trocarPeriodo(new Date().getHours());
-	$('span.txtNomePessoa').text(ControleCafe.quemFazCafeHoje());
+	$('.txtNomePessoa').text(ControleCafe.quemFazCafeHoje());
 
 });
