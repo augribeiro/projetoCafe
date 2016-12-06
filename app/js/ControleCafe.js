@@ -1,12 +1,11 @@
 class ControleCafe{
 
-
 	static getFuncionarios(){
-		return window.IO.ler();
+		return window.DAO.ler();
 	}
 
 	static salvar(funcionarios){
-		window.IO.salvar(funcionarios);
+		this.getFuncionarios.salvar(funcionarios);
 	}
 
 	static excluir(i){
