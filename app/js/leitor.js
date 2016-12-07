@@ -1,4 +1,4 @@
-window.IO = {
+window.DAO = {
 	salvar: function(data){
 		var xhr = new XMLHttpRequest();
 		xhr.open('POST', 'http://localhost/workspaceGitting/projeto_cafe/io/salvar.php', false);

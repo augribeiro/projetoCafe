@@ -1,5 +1,5 @@
 $(function(){
-	var funcionarios = window.IO.ler();
+	var funcionarios = window.DAO.ler();
 	// var quemFazCafe = function(){
 	// 	for(var i = 0; i < funcionarios.length; i++){
 	// 		if(funcionarios[i].jafoi === false)	return funcionarios[i].nome;
@@ -47,15 +47,9 @@ $(function(){
 		var $this = $(this);
 		var pai = $this.parent();
 		var filho = pai.find('td.nome').text();
-		for(var i = 0; i < funcionarios.length; i++){
-			if(filho === funcionarios[i].nome){
-				funcionarios.splice(i, 1);
-				ControleCafe.salvar(funcionarios);
-				return;
-			}
-		}
-
-	});
+		ControleCafe.excluir(filho);
+		popularTabela();
+		});
 
 	popularTabela();
 	trocarPeriodo(new Date().getHours());

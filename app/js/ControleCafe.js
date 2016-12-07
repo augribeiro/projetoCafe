@@ -5,11 +5,17 @@ class ControleCafe{
 	}
 
 	static salvar(funcionarios){
-		this.getFuncionarios.salvar(funcionarios);
+		return window.DAO.salvar(funcionarios);
 	}
 
-	static excluir(i){
-
+	static excluir(nome){
+		var funcionarios = this.getFuncionarios();
+		for(var i = 0; i < funcionarios.length; i++){
+			if(nome == funcionarios[i].nome){
+				funcionarios.splice(i, 1);
+				this.salvar(funcionarios);
+			}
+		}
 	}
 
 	static quemFazCafeHoje(){
