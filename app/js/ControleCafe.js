@@ -24,4 +24,14 @@ class ControleCafe{
 			if(funcionarios[i].jafoi === false)	return funcionarios[i].nome;
 		}
 	}
+
+	static removerMulta(nome){
+		var funcionarios = this.getFuncionarios();
+		for(var i = 0; i < funcionarios.length; i++)
+			if(nome == funcionarios[i].nome){
+				funcionarios[i].multa -= 1;
+			}
+
+			this.salvar(funcionarios);
+	}
 }

@@ -39,6 +39,16 @@ h1{
 	padding: 10px 0px;
 }
 
+.button-reset {
+	border:					none;
+	background-image:		none;
+	background-color:		transparent;
+	user-select:			none;
+	cursor:					pointer;
+	display:				inline-block;
+	outline: none;
+}
+
 input{
 	margin: 3px;
 }

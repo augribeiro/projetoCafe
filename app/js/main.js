@@ -23,7 +23,7 @@ $(function(){
 		    				funcionarios[i].nome + 
 		    			'</td>' + 
 		    			'<td class="multa">' +
-		    				funcionarios[i].multa +
+		    				funcionarios[i].multa + '<button id="remover" class="fa fa-minus-square-o button-reset" aria-hidden="true"></button>'  +
 		    			'</td>' +
 		    			'<td class="remove">X</td>' + 
 		    			'</tr>';
@@ -47,9 +47,19 @@ $(function(){
 		var $this = $(this);
 		var pai = $this.parent();
 		var filho = pai.find('td.nome').text();
-		ControleCafe.excluir(filho);
+		if(confirm('Deseja excluir mesmo o funcionário ' + filho )){
+			ControleCafe.excluir(filho);
+		}
 		popularTabela();
 		});
+
+	$('.tabelaUsuario').on("click", "button", function(){
+		var $this = $(this);
+		
+			var nomeFunc =  $this.parent().parent().find('td.nome').text();
+			ControleCafe.removerMulta(nomeFunc);
+			popularTabela();
+	});
 
 	popularTabela();
 	trocarPeriodo(new Date().getHours());
