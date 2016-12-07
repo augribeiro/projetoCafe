@@ -60,6 +60,13 @@ $(function(){
 		popularTabela();
 	});
 
+	$('.fezCafe').on('click', function(){
+		var $this = $(this);
+
+		var texto = $this.text();
+		ControleCafe.fezCafe(texto);
+	});
+
 	popularTabela();
 	trocarPeriodo(new Date().getHours());
 	$('.txtNomePessoa').text(ControleCafe.quemFazCafeHoje());

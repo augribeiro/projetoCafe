@@ -5,6 +5,29 @@ class ControleCafe{
 
 	}
 
+	static fezCafe(botao){
+		var funcionarios 	= this.getFuncionarios();
+		var nome 			= this.quemFazCafeHoje();
+		for(var i = 0; i < funcionarios.length; i++){
+			if(nome === funcionarios[i].nome)
+				switch(botao){
+					case 'Sim':
+					case 'Não precisa fazer':
+					funcionarios[i].jafoi = true;
+					break;
+
+					case 'Não fez':
+					funcionarios[i].jafoi = false;
+					funcionarios[i].multa += 1;
+					break;
+
+					default:
+					throw "Erro, sistema se comportou inesperadamente";
+				}
+				this.salvar(funcionarios);
+		}
+	}
+
 	static verificarSePrecisaReiniciarFluxo(){
 		var funcionarios = this.getFuncionarios();
 		var precisaReiniciar = true;
