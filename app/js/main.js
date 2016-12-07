@@ -40,7 +40,7 @@ $(function(){
 			ControleCafe.salvar(funcionarios);
 			funcionarios = ControleCafe.getFuncionarios();
 		}
-			popularTabela();
+		popularTabela();
 	});
 	
 	$('.tabelaUsuario').on("click", "td.remove",function(){
@@ -55,10 +55,9 @@ $(function(){
 
 	$('.tabelaUsuario').on("click", "button", function(){
 		var $this = $(this);
-		
-			var nomeFunc =  $this.parent().parent().find('td.nome').text();
-			ControleCafe.removerMulta(nomeFunc);
-			popularTabela();
+		var nomeFunc =  $this.parent().parent().find('td.nome').text();
+		ControleCafe.removerMulta(nomeFunc);
+		popularTabela();
 	});
 
 	popularTabela();

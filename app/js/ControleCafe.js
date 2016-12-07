@@ -1,5 +1,24 @@
 class ControleCafe{
 
+	static initialize() {
+		this.verificarSePrecisaReiniciarFluxo();
+
+	}
+
+	static verificarSePrecisaReiniciarFluxo(){
+		var funcionarios = this.getFuncionarios();
+		var precisaReiniciar = true;
+		for(var i = 0; i < funcionarios.length; i++){
+			if(funcionarios[i].jafoi === false){
+				precisaReiniciar = false;
+			}
+		}
+		if(precisaReiniciar === true){
+			for(i = 0; i < funcionarios.length; i++)
+				funcionarios[i].jafoi = false;
+		}
+	}
+
 	static getFuncionarios(){
 		return window.DAO.ler();
 	}
@@ -30,6 +49,8 @@ class ControleCafe{
 		for(var i = 0; i < funcionarios.length; i++)
 			if(nome == funcionarios[i].nome){
 				funcionarios[i].multa -= 1;
+				if(funcionarios[i].multa < 0) 
+					funcionarios[i].multa = 0;
 			}
 
 			this.salvar(funcionarios);
