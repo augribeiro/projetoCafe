@@ -34,12 +34,9 @@ $(function(){
 	
 	$('.formCadastro').on('submit', function(e){
 		e.preventDefault();
-		var nomeFunc = $('input[name=nomeFunc]').text();
-		if(nomeFunc !== ""){
-			funcionarios.push({nome: nomeFunc, jafoi: false});
-			ControleCafe.salvar(funcionarios);
-			funcionarios = ControleCafe.getFuncionarios();
-		}
+		var nomeFunc = $('input[name=nomeFunc]').val();
+		ControleCafe.salvar(funcionarios);
+		funcionarios = ControleCafe.getFuncionarios();
 		popularTabela();
 	});
 	
@@ -62,9 +59,10 @@ $(function(){
 
 	$('.fezCafe').on('click', function(){
 		var $this = $(this);
-
 		var texto = $this.text();
-		ControleCafe.fezCafe(texto);
+		ControleCafe.fezCafe(texto);	
+		$('.txtNomePessoa').text(ControleCafe.quemFazCafeHoje());
+		popularTabela();
 	});
 
 	popularTabela();
