@@ -35,8 +35,11 @@ $(function(){
 	$('.formCadastro').on('submit', function(e){
 		e.preventDefault();
 		var nomeFunc = $('input[name=nomeFunc]').val();
-		ControleCafe.salvar(funcionarios);
-		funcionarios = ControleCafe.getFuncionarios();
+		if(nomeFunc !== ""){
+			funcionarios.push({nome: nomeFunc, jafoi: false, multa: 0});
+			ControleCafe.salvar(funcionarios);
+			funcionarios = ControleCafe.getFuncionarios();
+		}
 		popularTabela();
 	});
 	
