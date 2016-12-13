@@ -31,13 +31,13 @@ class ControleCafe{
 	static verificarSePrecisaReiniciarFluxo(){
 		var funcionarios = this.getFuncionarios();
 		var precisaReiniciar = true;
-		for(var i = 0; i < funcionarios.length; i++){
+		for(let i = 0; i < funcionarios.length; i++){
 			if(funcionarios[i].jafoi === false){
 				precisaReiniciar = false;
 			}
 		}
 		if(precisaReiniciar === true){
-			for(i = 0; i < funcionarios.length; i++)
+			for(let i = 0; i < funcionarios.length; i++)
 				funcionarios[i].jafoi = false;
 		}
 	}
